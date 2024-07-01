@@ -1,7 +1,6 @@
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
-const config=require('config');
-const jwtSecret = config.get('jwtSecret');
+require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
 exports.signup = async (req, res) => {
@@ -31,7 +30,7 @@ exports.signup = async (req, res) => {
       },
     };
 
-    jwt.sign(payload, jwtSecret, { expiresIn: '24h' }, (err, token) => {
+    jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '24h' }, (err, token) => {
       if (err) throw err;
       res.json({ token });
     });
@@ -60,7 +59,7 @@ exports.login = async (req, res) => {
       },
     };
 
-    jwt.sign(payload, jwtSecret, { expiresIn: '24h' }, (err, token) => {
+    jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '24h' }, (err, token) => {
       if (err) throw err;
       res.json({ token });
     });

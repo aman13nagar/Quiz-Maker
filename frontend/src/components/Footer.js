@@ -12,7 +12,7 @@ import { styled } from '@mui/system';
 const FooterBar = styled(AppBar)({
   top: 'auto',
   bottom: 0,
-  backgroundColor: '#3f51b5', // Change the color as needed
+  backgroundColor: '#3f51b5', 
   padding: '10px 0',
 });
 
@@ -31,7 +31,7 @@ const SocialMediaContainer = styled('div')({
 const BackToTopButton = styled(IconButton)({
   color: '#fff',
   '&:hover': {
-    backgroundColor: '#303f9f', // Change hover color as needed
+    backgroundColor: '#303f9f', 
   },
 });
 

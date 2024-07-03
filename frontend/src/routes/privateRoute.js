@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import authService from '../services/authService';
+import {CircularProgress} from '@mui/material';
 
 const PrivateRoute = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -21,7 +22,7 @@ const PrivateRoute = ({ children }) => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // Or any other loading indicator you prefer
+    return <CircularProgress/>; 
   }
 
   return user ? children : <Navigate to="/" />;

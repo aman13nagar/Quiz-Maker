@@ -82,7 +82,7 @@ const HomePage = () => {
     const getUser = async () => {
       if (isLoggedIn) {
         const response = await authService.getUser();
-        setUser(response); // Ensure the response structure matches this
+        setUser(response); 
         isLoading(false);
       }
     };
